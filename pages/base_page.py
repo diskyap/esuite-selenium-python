@@ -21,7 +21,6 @@ class BasePage:
 
             method, value = locator
 
-            # Menunggu elemen terlihat (visible)
             return self.wait.until(EC.visibility_of_element_located((method, value)))
 
         except NoSuchElementException:
@@ -50,5 +49,13 @@ class BasePage:
         try:
             self.get_element(locator)
             return True
+        except TimeoutException:
+            return False
+        
+    def get_value(self, locator):
+        try:
+            element = self.get_element(locator)
+            return element.get_attribute('value')
+            
         except TimeoutException:
             return False
