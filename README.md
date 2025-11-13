@@ -18,6 +18,11 @@ pip install -r requirements.txt
 pytest
 ```
 
+### Execute with reporting allure report
+```
+pytest --alluredir=reports/allure-results
+```
+
 ## 📂 Project Architecture
 ```
 ESUITE-SELENIUM-PYTHON/ # The main project directory.
