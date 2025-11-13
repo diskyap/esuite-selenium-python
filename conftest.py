@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from pages.sign_in_page import SignInPage
+from pages.companies_page import CompaniesPage
 
 @pytest.fixture(scope="function")
 def driver():
@@ -32,5 +33,12 @@ def sign_in_page(driver):
 
     page = SignInPage(driver)
     page.navigate()
+
+    return page
+
+@pytest.fixture(scope="function")
+def companies_page(driver):
+
+    page = CompaniesPage(driver)
 
     return page
