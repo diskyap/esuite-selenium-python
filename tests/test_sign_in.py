@@ -16,7 +16,7 @@ class TestSignIn:
         sign_in_page.sign_in(EMAIL, PASSWORD)
 
         # assert locators
-        WELCOME_WORDING = (By.XPATH, "//span[text()='Selamat Datang Kembali,']")
+        WELCOME_WORDING = (By.XPATH, "//span[text()='Welcome Back,']")
         assert sign_in_page.is_element_present(WELCOME_WORDING) is True
         
     # @pytest.mark.run_only
@@ -30,7 +30,7 @@ class TestSignIn:
         sign_in_page.sign_in(USERNAME, PASSWORD)
 
         # assert locators
-        WELCOME_WORDING = (By.XPATH, "//span[text()='Selamat Datang Kembali,']")
+        WELCOME_WORDING = (By.XPATH, "//span[text()='Welcome Back,']")
         assert sign_in_page.is_element_present(WELCOME_WORDING) is True
     
     # @pytest.mark.run_only
